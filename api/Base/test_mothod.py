@@ -18,7 +18,7 @@ class TestMethod(unittest.TestCase):
             "password": "45678"
         }
         res = self.run.run_main(url, "POST", data)
-        print(type(res))
+        print(res)
         print("---用例一")
 
     def test_02(self):

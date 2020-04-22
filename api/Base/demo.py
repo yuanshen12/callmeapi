@@ -8,11 +8,11 @@ class RunMain:
 
     def send_get(self, url, data=None):
         res = requests.get(url, data).json()
-        return json.dumps(res, indent=2, sort_keys=True)
+        return res
 
     def send_post(self, url, data=None):
         res = requests.post(url, data).json()
-        return json.dumps(res, indent=2, sort_keys=True)
+        return res
 
     def run_main(self, url, method, data=None):
         res = None
@@ -20,7 +20,7 @@ class RunMain:
             res = self.send_get(url, data)
         else:
             res = self.send_post(url, data)
-        return json.loads(res)
+        return res
 
 
 if __name__ == '__main__':
@@ -29,5 +29,5 @@ if __name__ == '__main__':
         "password": "123456"
     }
     url = "http://127.0.0.1:8000/login/"
-    run = RunMain(url, "post",data)
-    print(run.res)
+    run = RunMain()
+    print(run.send_post(url, data))
