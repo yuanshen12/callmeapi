@@ -14,6 +14,7 @@ class global_var:
     field_depend = "8"
     data = "9"
     expect = "10"
+    result = "11"
 
 
 # 获取caseid
@@ -56,6 +57,10 @@ def get_data():
 
 def get_expect():
     return global_var.expect
+
+
+def get_result():
+    return global_var.result
 
 
 

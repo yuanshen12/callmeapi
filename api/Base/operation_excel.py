@@ -1,4 +1,5 @@
 import xlrd
+from xlutils.copy import copy
 
 
 class OperationExcel:
@@ -25,6 +26,21 @@ class OperationExcel:
     # 获取某一个单元格的内容
     def get_cell_value(self, row, col):
         return self.data.cell_value(row, int(col))
+
+    # 写入数据
+    def write_value(self, row, col, value):
+        """
+        写入excel数据
+        :param row: 行
+        :param col: 列
+        :param value: 输入值
+        :return:
+        """
+        read_data = xlrd.open_workbook(self.file_name)
+        write_data = copy(read_data)
+        sheet_data = write_data.get_sheet(0)
+        sheet_data.write(row, col, value)
+        write_data.save(self.file_name)
 
 
 if __name__ == '__main__':

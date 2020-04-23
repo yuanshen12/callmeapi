@@ -66,3 +66,7 @@ class GetData:
             return None
         return expect
 
+    def write_result(self, row, value):
+        col = int(data_config.get_result())
+        self.operation_excel.write_value(row, col, value)
+
