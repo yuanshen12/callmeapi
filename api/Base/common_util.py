@@ -7,8 +7,6 @@ class CommonUtil:
         :return:
         """
         flag = None
-        print(str_one)
-        print(str_two)
         if str_one in str_two:
             flag = True
         else:
