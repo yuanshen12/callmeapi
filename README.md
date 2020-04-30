@@ -1,4 +1,4 @@
-# 酒小二API接口自动化测试框架
+# API接口自动化测试框架
 
 使用工具：python + requests | excel
 
